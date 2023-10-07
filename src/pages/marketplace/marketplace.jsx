@@ -1,6 +1,10 @@
 import { Input } from "@chakra-ui/react";
-import FilterBox from "../components/filters/filterBox.jsx";
-import JobPositionCard from "../components/cards/jobPositionCard.jsx";
+import FilterBox from "../../components/filters/filterBox.jsx";
+import JobPositionCard from "../../components/cards/jobPositionCard.jsx";
+import OrganizationFilterChildComponent from "./components/organizationFilterChildComponent.jsx";
+import ProjectTypeFilterChildComponent from "./components/projectTypeFilterChildComponent.jsx";
+import WorkTypeFilterChildComponent from "./components/workTypeFilterChildComponent.jsx";
+import StartDateFilterChildComponent from "./components/StartDateFilterChildComponent.jsx";
 export default function MarketPlace() {
   //TODO bring the UI for the marketplace.
   return (
@@ -21,19 +25,19 @@ export default function MarketPlace() {
               <div className="flex flex-col space-y-3">
                 <FilterBox
                   title={"Organization"}
-                  children={<div className="h-[150px]">children of organization</div>}
+                  children={<OrganizationFilterChildComponent/>}
                 />
                 <FilterBox
                   title={"Project Type"}
-                  children={<div className="h-[150px]">children of project type</div>}
+                  children={<ProjectTypeFilterChildComponent/>}
                 />
                 <FilterBox
                   title={"Work Type"}
-                  children={<div className="h-[150px]">children of work type</div>}
+                  children={<WorkTypeFilterChildComponent/>}
                 />
                 <FilterBox
                   title={"Start Date"}
-                  children={<div className="h-[150px]">children of start date</div>}
+                  children={<StartDateFilterChildComponent/>}
                 />
               </div>
             </div>

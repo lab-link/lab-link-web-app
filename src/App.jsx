@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import NavBar from "./components/navigationBar/navBar.jsx";
-import MarketPlace from "./pages/marketplace";
+import MarketPlace from "./pages/marketplace/marketplace";
 function App() {
   const [count, setCount] = useState(0);
 
