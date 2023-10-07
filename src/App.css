@@ -40,3 +40,16 @@
 .read-the-docs {
   color: #888;
 }
+.App{
+  background-color: green;
+  width: 100px;
+  height: 100px;
+
+}
+.modelWrap{
+  height: 200px;
+  width: 200px;
+  background-color: grey;
+}
+
+
