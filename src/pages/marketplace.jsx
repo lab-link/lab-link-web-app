@@ -19,10 +19,22 @@ export default function MarketPlace() {
             <div className="flex flex-col items-start">
               <div className="text-[32px]">Filters</div>
               <div className="flex flex-col space-y-3">
-                <FilterBox />
-                <FilterBox />
-                <FilterBox />
-                <FilterBox />
+                <FilterBox
+                  title={"Organization"}
+                  children={<div className="h-[150px]">children of organization</div>}
+                />
+                <FilterBox
+                  title={"Project Type"}
+                  children={<div className="h-[150px]">children of project type</div>}
+                />
+                <FilterBox
+                  title={"Work Type"}
+                  children={<div className="h-[150px]">children of work type</div>}
+                />
+                <FilterBox
+                  title={"Start Date"}
+                  children={<div className="h-[150px]">children of start date</div>}
+                />
               </div>
             </div>
             {/* job offers */}
