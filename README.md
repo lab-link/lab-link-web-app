@@ -1,4 +1,12 @@
-# React + Vite
+# React + Vite 
+
+## Get Started
+
+### Install Packages
+``` yarn install ```
+
+### Start Web App in Development
+``` yarn dev ```
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
