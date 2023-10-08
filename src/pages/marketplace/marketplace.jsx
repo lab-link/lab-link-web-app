@@ -1,4 +1,5 @@
 import { Input } from "@chakra-ui/react";
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import FilterBox from "../../components/filters/filterBox.jsx";
 import JobPositionCard from "../../components/cards/jobPositionCard.jsx";
 import OrganizationFilterChildComponent from "./components/organizationFilterChildComponent.jsx";
@@ -25,7 +26,7 @@ export default function MarketPlace() {
               <div className="flex flex-col space-y-3">
                 <FilterBox
                   title={"Organization"}
-                  children={<OrganizationFilterChildComponent/>}
+                  children={<OrganizationFilterChildComponent />}
                 />
                 {/* <FilterBox
                   title={"Project Type"}
@@ -45,7 +46,22 @@ export default function MarketPlace() {
             <div className="flex flex-col items-start">
               <div className="text-[32px]">Results</div>
               <div className="flex flex-col space-y-3">
-                <JobPositionCard jobTitle="Software Engineer" companyName="Johnson Space Center"/>
+                <Routes>
+                  <Route
+                    path="/projectDetail"
+                    element={
+                      <JobPositionCard
+                        jobTitle="Software Engineer"
+                        companyName="Johnson Space Center"
+                      />
+                    }
+                  />
+                </Routes>
+                {/* <Route path="/marketplace" element={<MarketPlace />} /> */}
+                <JobPositionCard
+                  jobTitle="Software Engineer"
+                  companyName="Johnson Space Center"
+                />
                 <JobPositionCard />
                 <JobPositionCard />
                 <JobPositionCard />
