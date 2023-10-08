@@ -3,6 +3,7 @@ import "./App.css";
 import NavBar from "./components/layout/NavBar.jsx";
 import {BrowserRouter,Router} from "react-router-dom"
 import ProjectDetails from "./pages/projectDetails/projectDetails";
+import Organization from "./pages/organization/organization";
 function App() {
   const [count, setCount] = useState(0);
 
