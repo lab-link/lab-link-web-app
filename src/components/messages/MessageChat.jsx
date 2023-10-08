@@ -95,12 +95,12 @@ function MessageChat(props){
 
     }
     useEffect(() => {
-        console.log("test")
+        // console.log("test")
         if (props) {
             setProfileId(props.user_profile_id);
             setSelectedProfileId(props.selected_profile_id)
         }
-      }, [profileId, selectedProfileId])
+      }, [props.user_profile_id, props.selected_profile_id])
 
     return (
         <Flex flex={7} height="80%" className="message-chat">
@@ -108,14 +108,14 @@ function MessageChat(props){
                 <VStack mt="20px" mb="20px">
                     {
                         messagesArr.map((message) => {
-                            console.log("message-chat - selectedProfileId: "+  selectedProfileId + " profileId: " + profileId)
+                            // console.log("message-chat - selectedProfileId: "+  selectedProfileId + " profileId: " + profileId)
                             if((message.userRecipientId == profileId && message.userSenderId == selectedProfileId) || 
                                 (message.userSenderId == profileId && message.userRecipientId == selectedProfileId)){
                                 let added_style = ''
                                 console.log("userProfileId: " + profileId + " usesrSenderId: " + message.userSenderId + " userREcipient: " + message.userRecipientId)
 
                                 if( profileId == message.authorId){
-                                    console.log("HIT")
+                                    // console.log("HIT")
                                     added_style ='message-box--sender';
                                 }
                                 return (<Text key={message.messageId} className={`message-box ${added_style}`} ml='20px'>{message.messageData}</Text>);

@@ -49,22 +49,24 @@ function Messages() {
             if(isUnmounted){
                 return;
             }
-            console.log(response)
+            // console.log(response)
             setSelectedProfileId(response[0].profile_id)
             setUserProfileId(response[1].profile_id)
             setIsLoading(false)
         })
         return () => {
-            console.log("return() -  parent   selectedProfile: " + selectedProfileId)
             isUnmounted = true;
         }  
     }, [])
 
     function fetchMessageData(e, data){
         setSelectedProfileId(data.profile_id)
-        console.log("on click - " + data.profile_id)
-
     }
+
+    useEffect(() => {
+        console.log("return() -  parent   selectedProfile: " + selectedProfileId)
+
+    }, [selectedProfileId])
   
       
     return (
