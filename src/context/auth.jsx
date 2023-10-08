@@ -3,8 +3,8 @@ import {
     signInWithEmailAndPassword,
     signOut,
     onAuthStateChanged,
-    User,
-    UserCredential
+    // User,
+    // UserCredential
   } from 'firebase/auth'
   
   import React, {
@@ -16,14 +16,15 @@ import {
   } from 'react'
   import { auth } from '../services/firebaseConfig.js'
 
-  const AuthContext = createContext<AuthInterface>({
+  const AuthContext = createContext({
     signup: () => undefined,
     login: () => undefined,
     logout: () => undefined
   })
   
   const AuthProvider = ({ children })  => {
-    const [currentUser, setCurrentUser] = useState<User | null>(null)
+    // <User | null>
+    const [currentUser, setCurrentUser] = useState(null)
     const [loading, setLoading] = useState(true)
   
     const signup = ({

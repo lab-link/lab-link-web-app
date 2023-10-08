@@ -1,4 +1,4 @@
-import { useAuth } from "contexts/auth";
+import { useAuth } from "../../context/auth.jsx";
 import React, { FormEvent, useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import { Button, Stack } from "@chakra-ui/react";
