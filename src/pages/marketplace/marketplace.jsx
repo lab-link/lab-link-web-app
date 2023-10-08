@@ -8,7 +8,7 @@ import StartDateFilterChildComponent from "./components/StartDateFilterChildComp
 export default function MarketPlace() {
   //TODO bring the UI for the marketplace.
   return (
-    <div className="h-full w-full bg-[#edebeb] py-[25px] flex flex-col items-center">
+    <div className="h-full w-full py-[25px] flex flex-col items-center">
       {/* title */}
       <div className="flex flex-col items-start">
         <div className="font-bold text-[36px]">MARKETPLACE</div>
