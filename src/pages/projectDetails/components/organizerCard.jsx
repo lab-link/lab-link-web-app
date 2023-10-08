@@ -1,7 +1,8 @@
 import Linebreaker from "./linebreaker";
 
 export default function OrganizerCard({clientsName="clientsName",clientsPosition="clientsPosition"}) {
-  return (
+  //with the id get the avatar, clientsName, and clientsPosition.
+    return (
     <div className="flex flex-col items-start  w-[450px]">
       <div className="text-[32px]">Organizer</div>
       <Linebreaker/>
