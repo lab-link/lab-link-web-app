@@ -1,3 +1,4 @@
+import { LoremIpsum } from "react-lorem-ipsum";
 import ProjectPageTitle from "./ProjectPageTitle";
 export default function ProjectDescription({ projectDescription = null }) {
     return (
