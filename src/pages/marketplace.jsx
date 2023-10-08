@@ -4,7 +4,7 @@ import JobPositionCard from "../components/cards/jobPositionCard.jsx";
 export default function MarketPlace() {
   //TODO bring the UI for the marketplace.
   return (
-    <div className="h-full w-full bg-[#C5C5C5] flex flex-col items-center">
+    <div className="h-full w-full bg-[#FAFAFA] flex flex-col items-center">
       {/* title */}
       <div className="flex flex-col items-start">
         <div className="font-bold text-[36px]">MARKETPLACE</div>

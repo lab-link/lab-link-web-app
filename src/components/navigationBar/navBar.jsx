@@ -5,6 +5,9 @@ import { GiChemicalTank } from "react-icons/gi";
 import NavBarButton from "../buttons/navBarButton.jsx"
 export default function NavBar() {
   const [selectedTab, setSelectedTab] = useState();
+  function test(){
+    console.log('his')
+  }
   return (
     <div className="w-[1080px] h-[50px] bg-white flex  justify-between items-center px-[40px]">
       <div className="flex">
@@ -19,11 +22,11 @@ export default function NavBar() {
       </div>
       <hr />
       {/* nav bar buttons */}
+
       <div className="flex justify-evenly space-x-3 h-full">
-        <NavBarButton text={"Home"} isSelected={false}/>
-        <NavBarButton text={"Blog"} isSelected={false}/>
-        <NavBarButton text={"About"} isSelected={false}/>
-        <NavBarButton text={"Contact"} isSelected={true}/>
+        <NavBarButton text={"Messages"} isSelected={false}/>
+        <NavBarButton text={"Marketplace"} isSelected={false}/>
+        <NavBarButton text={"Profile"} isSelected={false}/>
       </div>
     </div>
   );
