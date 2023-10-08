@@ -56,13 +56,21 @@ export default function MarketPlace() {
                   }
                 </Link>
 
-                <JobPositionCard
-                  jobTitle="Software Engineer"
-                  companyName="Johnson Space Center"
-                />
-                <JobPositionCard />
-                <JobPositionCard />
-                <JobPositionCard />
+                <Link to={"/projectDetails/233"}>
+                  <JobPositionCard
+                    jobTitle="Software Engineer"
+                    companyName="Johnson Space Center"
+                  />
+                </Link>
+                <Link to={"/projectDetails/23323"}>
+                  <JobPositionCard />
+                </Link>
+                <Link to={"/projectDetails/23123"}>
+                  <JobPositionCard />
+                </Link>
+                <Link to={"/projectDetails/2332"}>
+                  <JobPositionCard />
+                </Link>
               </div>
             </div>
           </div>
