@@ -49,7 +49,18 @@ function Messages() {
                 </Stack>
                 <hr />             
             </VStack>
-            <MessageChat/>
+            <Flex flex={7} minH='auto'>
+                <VStack mt="20px" mb="20px">
+                <Text className='message-box' ml='20px'>"The quick brown fox jumps over the lazy dog" is an English-language pangram—a</Text>
+  <Text className='message-box' ml='20px'>is an English-language pangram—a
+  sentence that contains all of the letters of the English alphabet. Owing to
+  its existence, Chakra was created.</Text>
+  <Text className='message-box' ml='20px'>"The quick brown fox jumps over the lazy dog" is an English-language pangram—a
+  sentence that contains all of the letters of the English alphabet. Owing to
+  its existence, Chakra was created.</Text>
+                <Text className='message-box message-box--sender' textAlign='right' ml='20px'>Sup</Text>
+                </VStack>
+            </Flex>
         </Flex>
     </Card>
     )
