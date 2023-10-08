@@ -7,6 +7,7 @@ import Messages from "./../../pages/messages.jsx"
 import Profile from "../../pages/profile.jsx"
 import MarketPlace from "../../pages/marketplace/marketplace.jsx";
 import ProjectDetails from '../../pages/projectDetails/projectDetails.jsx';
+import Organization from '../../pages/organization/organization.jsx';
 // Create separate components for each page
 
 function NavBar() {
@@ -33,6 +34,7 @@ function NavBar() {
               <Route path="/marketplace" element={<MarketPlace/>}/>
               <Route path="/profile" element={<Profile/>}/>
               <Route path="/projectDetails/:projectId" element={<ProjectDetails/>}/>
+              <Route path="/organization/:organizationId" element={<Organization/>}/>
           </Routes>
         </TabPanels>
       </Tabs>
