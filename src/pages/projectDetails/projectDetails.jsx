@@ -8,7 +8,7 @@ import RoleDescription from "./components/roleDescription";
 export default function ProjectDetails() {
   return (
     //project header
-    <div className="flex flex-col py-[25px] px-[50px]">
+    <div className="flex flex-col py-[25px] px-[50px] space-y-3">
       <div className="flex justify-between">
         <ProjectPositionCard />
         <OrganizerCard />
