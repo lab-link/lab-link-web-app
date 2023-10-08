@@ -13,3 +13,6 @@
     background-color:#FAFAFA !important;
     text-align: right !important;
 }
+.message-chat{
+    overflow-y: scroll;
+}
