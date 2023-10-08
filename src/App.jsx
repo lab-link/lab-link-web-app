@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import NavBar from "./components/layout/NavBar.jsx";
-import {BrowserRouter,Router} from "react-router-dom"
+import { BrowserRouter, Router } from "react-router-dom";
 import ProjectDetails from "./pages/projectDetails/projectDetails";
 import Organization from "./pages/organization/organization";
 function App() {
@@ -9,8 +9,7 @@ function App() {
 
   return (
     <div className="flex flex-col w-full h-full">
-      
-      <NavBar/>      
+      <NavBar />
     </div>
   );
 }
