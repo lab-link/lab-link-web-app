@@ -14,7 +14,6 @@ function NavBar() {
   return (
     <Stack direction='row'>
         <GiChemicalTank className="w-[50px] h-[50px]" />
-        {/* <SlChemistry className="w-[50px] h-[50px]"/> */}
         <a
           href=""
           className="font-bold   text-[32px] hover:underline hover:text-black"
