@@ -6,35 +6,37 @@ import { GiChemicalTank } from "react-icons/gi";
 import Messages from "./../../pages/messages.jsx"
 import Profile from "../../pages/profile.jsx"
 import MarketPlace from "../../pages/marketplace/marketplace.jsx";
+import ProjectDetails from '../../pages/projectDetails/projectDetails.jsx';
 // Create separate components for each page
 
 function NavBar() {
   return (
     <Stack direction='row'>
-      {/* <Box>
-      <GiChemicalTank className="w-[50px] h-[50px]" />   
-        <Text>LAB LINK</Text>
-      </Box> */}
-      <Router>
-        <Tabs>
-          <TabList>
-            <Stack direction='row'>
-              <GiChemicalTank className="w-[50px] h-[50px]" />   
-              <p>LAB LINK</p>
-            </Stack>
-            <Tab as={Link} to="/profile">Profile</Tab>
-            <Tab as={Link} to="/messages">Messages</Tab>
-            <Tab as={Link} to="/marketplace">Marketplace</Tab>
-          </TabList>
-          <TabPanels>
-            <Routes>
-                <Route path="/profile" element={<Profile/>}/>
-                <Route path="/messages" element={<Messages/>}/>
-                <Route path="/marketplace" element={<MarketPlace/>}/>
-            </Routes>
-          </TabPanels>
-        </Tabs>
-      </Router>
+        <GiChemicalTank className="w-[50px] h-[50px]" />
+        {/* <SlChemistry className="w-[50px] h-[50px]"/> */}
+        <a
+          href=""
+          className="font-bold   text-[32px] hover:underline hover:text-black"
+        >
+          LAB LINK
+        </a>
+    <Router>
+      <Tabs isLazy>
+        <TabList>
+          <Tab as={Link} to="/messages">Messages</Tab>
+          <Tab as={Link} to="/marketplace">Marketplace</Tab>
+          <Tab as={Link} to="/profile">Profile</Tab>
+        </TabList>
+        <TabPanels>
+          <Routes>
+              <Route path="/messages" element={<Messages/>}></Route>
+              <Route path="/marketplace" element={<MarketPlace/>}/>
+              <Route path="/profile" element={<Profile/>}/>
+              <Route path="/projectDetails/:projectId" element={<ProjectDetails/>}/>
+          </Routes>
+        </TabPanels>
+      </Tabs>
+    </Router>
     </Stack>
   );
 }
