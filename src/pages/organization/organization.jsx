@@ -1,5 +1,5 @@
 import OrganizationBanner from "./components/OrganizationBanner";
-import AboutUsOrganization from "./components/aboutUsOrganization";
+import AboutUsOrganization from "./tabs/aboutUsOrganization";
 
 import {
   Tabs,
@@ -10,11 +10,12 @@ import {
   Box,
   Stack,
 } from "@chakra-ui/react";
+import Jobs from "./tabs/jobs";
+import Milestones from "./tabs/milestones";
 
 export default function Organization() {
   return (
-    <div className="flex flex-col h-[1000px] space-y-3">
-      Organization
+    <div className="flex flex-col h-[1000px] space-y-3 py-[20px]">
       <OrganizationBanner />
       <Tabs align="center">
         <TabList>
@@ -28,10 +29,10 @@ export default function Organization() {
             <AboutUsOrganization />
           </TabPanel>
           <TabPanel>
-            <p>two!</p>
+            <Jobs/>
           </TabPanel>
           <TabPanel>
-            <p>three!</p>
+            <Milestones/>
           </TabPanel>
         </TabPanels>
       </Tabs>
