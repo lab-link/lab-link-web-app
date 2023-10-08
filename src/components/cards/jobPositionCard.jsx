@@ -1,12 +1,17 @@
+import { Link } from "react-router-dom";
+
+
 export default function JobPositionCard({
   jobTitle = "Job Title",
   companyName = "company Name",
   avatar = null,
   routeDirectory = null,
+  projectId=null,
 }) {
   return (
     <div className="w-[350px] h-[160px] bg-white hover:shadow-xl hover:cursor-pointer shadow-md rounded-2xl flex items-center justify-start px-[20px] space-x-2">
       {/* avatar */}
+      <Link to={`/projectDetails/${projectId}`}>
       <div className="w-[100px] h-[100px] rounded-[50px] bg-green-300">
         {avatar}
       </div>
@@ -14,6 +19,7 @@ export default function JobPositionCard({
         <div className="text-[20px] font-semibold">{jobTitle}</div>
         <div className="text-[20px] font-light">{companyName}</div>
       </div>
+      </Link>
     </div>
   );
 }
