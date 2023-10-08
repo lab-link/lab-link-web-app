@@ -24,13 +24,13 @@ function NavBar() {
     <Router>
       <Tabs isLazy>
         <TabList>
-          <Tab as={Link} to="/messages">Messages</Tab>
+          <Tab as={Link} to="/messages/:id">Messages</Tab>
           <Tab as={Link} to="/marketplace">Marketplace</Tab>
           <Tab as={Link} to="/profile">Profile</Tab>
         </TabList>
         <TabPanels>
           <Routes>
-              <Route path="/messages" element={<Messages/>}></Route>
+              <Route path="/messages/:id" element={<Messages/>}></Route>
               <Route path="/marketplace" element={<MarketPlace/>}/>
               <Route path="/profile" element={<Profile/>}/>
               <Route path="/projectDetails/:projectId" element={<ProjectDetails/>}/>
