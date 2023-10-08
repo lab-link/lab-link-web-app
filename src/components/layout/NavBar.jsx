@@ -5,6 +5,7 @@ import { GiChemicalTank } from "react-icons/gi";
 
 import Profile from "../../pages/profile.jsx"
 import MarketPlace from "../../pages/marketplace/marketplace.jsx";
+import ProjectDetails from '../../pages/projectDetails/projectDetails.jsx';
 // Create separate components for each page
 const Home = () => <Box p={4}>Home Page Content</Box>;
 const Contact = () => <Box p={4}>Contact Page Content</Box>;
@@ -32,6 +33,7 @@ function NavBar() {
               <Route path="/contact" element={<Contact/>}/>
               <Route path="/marketplace" element={<MarketPlace/>}/>
               <Route path="/profile" element={<Profile/>}/>
+              <Route path="/projectDetails/:projectId" element={<ProjectDetails/>}/>
           </Routes>
         </TabPanels>
       </Tabs>
