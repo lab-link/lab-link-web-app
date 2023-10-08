@@ -1,4 +1,4 @@
-import ProfileTab from "./../components/profiles/ProfileTab.jsx"
+import ProfileTab from "../components/profiles/ProfileTab.jsx"
 
 
 
