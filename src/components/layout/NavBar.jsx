@@ -4,8 +4,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { GiChemicalTank } from "react-icons/gi";
 
 import Profile from "../../pages/profile.jsx"
-import Marketplace from "./../../pages/marketplace.jsx"
-
+import MarketPlace from "../../pages/marketplace/marketplace.jsx";
 // Create separate components for each page
 const Home = () => <Box p={4}>Home Page Content</Box>;
 const Contact = () => <Box p={4}>Contact Page Content</Box>;
@@ -31,7 +30,7 @@ function NavBar() {
         <TabPanels>
           <Routes>
               <Route path="/contact" element={<Contact/>}/>
-              <Route path="/marketplace" element={<Marketplace/>}/>
+              <Route path="/marketplace" element={<MarketPlace/>}/>
               <Route path="/profile" element={<Profile/>}/>
           </Routes>
         </TabPanels>
