@@ -20,11 +20,11 @@ import fetchUserProfile from "../../api/profile/fetchProfile.jsx";
 import fetchProfileInstitutions from "../../api/institution/fetchInstitution.jsx";
 
 function ProfileTab() {
-  const profileId = 1;
   const [profileData, setProfileData] = useState({});
   const [institutionData, setInstitutionData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
+  const profileId = 1;
   useEffect(() => {
     fetchUserProfile(profileId)
       .then((profile_data) => {
@@ -74,13 +74,21 @@ function ProfileTab() {
             <TabPanel>
               <ProfileAboutMe
                 profile_data={profileData}
-                institution_data={institutionData.filter((ele, i) => ele.institution_type === 'University' & ele.is_currently_attending === true)}
+                institution_data={institutionData.filter(
+                  (ele, i) =>
+                    (ele.institution_type === "University") &
+                    (ele.is_currently_attending === true)
+                )}
               />
             </TabPanel>
             <TabPanel>
               <ProfilePortfolio
                 portfolio_data={profileData}
-                institution_data={institutionData.filter((ele, i) => ele.institution_type === 'Employer' & ele.is_currently_attending === false)}
+                institution_data={institutionData.filter(
+                  (ele, i) =>
+                    (ele.institution_type === "Employer") &
+                    (ele.is_currently_attending === false)
+                )}
               />
             </TabPanel>
           </TabPanels>
