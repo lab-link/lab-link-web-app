@@ -2,6 +2,7 @@ export default function JobPositionCard({
   jobTitle = "Job Title",
   companyName = "company Name",
   avatar = null,
+  routeDirectory = null,
 }) {
   return (
     <div className="w-[350px] h-[160px] bg-white hover:shadow-xl hover:cursor-pointer shadow-md rounded-2xl flex items-center justify-start px-[20px] space-x-2">

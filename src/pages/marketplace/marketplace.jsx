@@ -27,7 +27,7 @@ export default function MarketPlace() {
                   title={"Organization"}
                   children={<OrganizationFilterChildComponent/>}
                 />
-                <FilterBox
+                {/* <FilterBox
                   title={"Project Type"}
                   children={<ProjectTypeFilterChildComponent/>}
                 />
@@ -38,7 +38,7 @@ export default function MarketPlace() {
                 <FilterBox
                   title={"Start Date"}
                   children={<StartDateFilterChildComponent/>}
-                />
+                /> */}
               </div>
             </div>
             {/* job offers */}

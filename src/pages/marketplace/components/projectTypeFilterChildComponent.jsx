@@ -1,5 +1,5 @@
 
 
 export default function ProjectTypeFilterChildComponent(){
-    return <div>project type filter</div>
+    return <div>Coming Soon</div>
 }
