@@ -8,10 +8,12 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import fetchProject from "../../api/marketplace/fetchProject";
+import fetchOrganization from "./../../api/organization/fetchOrganization";
 
 export default function ProjectDetails() {
   const { projectId } = useParams();
   const [projectData, setProjectData] = useState({});
+  const [org, setOrg] = useState({})
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -21,6 +23,9 @@ export default function ProjectDetails() {
         console.log(data);
         setProjectData(data);
         setLoading(false);
+        fetchOrganization(projectId).then(response=>{
+          setOrg(response)
+        })
       })
       .catch((err) => {
         console.error("Error loading project details: ", err);
@@ -46,6 +51,7 @@ export default function ProjectDetails() {
               position={projectData.project_tasks}
               organization={projectData.projects_tasks}
               organizationId={projectData.organization_id}
+              org={org}
             />
             <OrganizerCard
               clientsName={projectData.project}

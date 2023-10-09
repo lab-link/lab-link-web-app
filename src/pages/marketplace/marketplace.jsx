@@ -13,6 +13,7 @@ export default function MarketPlace() {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(7);
+  const [imageUrl, setImageUrl] = useState();
 
   useEffect(() => {
     // Fetch projects from your backend or API
@@ -79,6 +80,7 @@ export default function MarketPlace() {
                       jobTitle={project.projects_tasks}
                       companyName={project.project_owners}
                       projectId={i + 1} // Use a unique identifier here
+                      imageUrl=""
                     />
                   ))
                 )}

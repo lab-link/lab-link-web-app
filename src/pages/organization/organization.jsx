@@ -17,10 +17,11 @@ import Milestones from "./tabs/milestones";
 
 export default function Organization() {
   const { projectId } = useParams();
+
   const [organizationData, setOrganizationData] = useState({});
   const [loading, setLoading] = useState(true);
   
-  console.log(projectId)
+  console.log('projectId: ', projectId)
   useEffect(() => {
     fetchOrganization(projectId)
       .then((data) => {
@@ -31,6 +32,7 @@ export default function Organization() {
       .catch((err) => {
         console.error("Error loading organization details: ", err);
       });
+      console.log(org)
   }, []);
 
   return (
