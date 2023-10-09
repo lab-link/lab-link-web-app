@@ -45,6 +45,7 @@ export default function ProjectDetails() {
             <ProjectPositionCard
               position={projectData.project_tasks}
               organization={projectData.projects_tasks}
+              organizationId={projectData.organization_id}
             />
             <OrganizerCard
               clientsName={projectData.project}

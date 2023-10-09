@@ -20,25 +20,29 @@ import fetchUserProfile from "../../api/profile/fetchProfile.jsx";
 import fetchProfileInstitutions from "../../api/institution/fetchInstitution.jsx";
 
 function ProfileTab() {
+  const profileId = 1;
   const [profileData, setProfileData] = useState({});
-  const [institutionData, setInstitutionData] = useState({});
+  const [institutionData, setInstitutionData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const profileId = 1;
   useEffect(() => {
-    fetchUserProfile(profileId)
-      .then((profile_data) => {
-        setProfileData(profile_data);
-        return fetchProfileInstitutions(profileId);
-      })
-      .then((institution_data) => {
-        setInstitutionData(institution_data);
-      })
-      .then(setIsLoading(false))
-      .catch((err) => {
-        console.error("Error fetching profile data:", err);
-      });
+    const fetchData = async() => {
+      try {
+          const p = await fetchUserProfile(profileId)
+          const i = await fetchProfileInstitutions(profileId)
+          setProfileData(p)
+          setInstitutionData(i)
+          setIsLoading(true)
+      } catch (error){
+        console.log(error)
+      }
+    }
+    fetchData().then(()=>{
+      setIsLoading(false)
+
+    })
   }, []);
+  
 
   return isLoading ? (
     <div>Loading...</div>

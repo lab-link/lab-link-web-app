@@ -64,8 +64,6 @@ function Messages() {
     }
 
     useEffect(() => {
-        console.log("return() -  parent   selectedProfile: " + selectedProfileId)
-
     }, [selectedProfileId])
   
       

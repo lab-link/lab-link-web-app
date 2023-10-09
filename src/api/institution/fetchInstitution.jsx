@@ -1,13 +1,15 @@
 import api from '../api';
 
-const fetchProfileInstitutions = async (profileId) =>{
-    
-    try {
-        const response = await api.get(`/get-all-institutions-by-profile/${profileId}`);
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
+const fetchProfileInstitutions = (profileId) =>{
+    return new Promise(async (resolve, reject) => {
+        try {
+            const response = await api.get(`/get-all-institutions-by-profile/${profileId}`);
+            resolve(response.data)
+        } catch (error) {
+            reject(error);
+        }
+    });
 }
+
 
 export default fetchProfileInstitutions;

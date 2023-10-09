@@ -1,7 +1,7 @@
 import Linebreaker from "./linebreaker";
 import { Link } from "react-router-dom";
 
-export default function ProjectPositionCard({position="position", organization="organization"}){
+export default function ProjectPositionCard({position="position", organization="organization", organizationId=31}){
     // TODO: fetch api data for the position and organization
     return <div className="flex flex-col items-start w-[450px]">
         <div className="text-[32px]">
@@ -9,10 +9,10 @@ export default function ProjectPositionCard({position="position", organization="
         </div>
         <Linebreaker/>
         <div className="text-[24px] font-semibold">{position}</div>
-        <Link to={"/organization/223332"}>
+        <Link to={`/organization/${organizationId}`}>
                   {/* <JobPositionCard /> */}
                   <div className="text-[24px] font-light hover:cursor-pointer hover:underline">{organization}</div>
-                </Link>
+        </Link>
         {/* <div className="text-[24px] font-light hover:cursor-pointer hover:underline">{organization}</div> */}
     </div>
 }
