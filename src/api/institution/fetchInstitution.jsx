@@ -1,11 +1,9 @@
-import axios from 'axios';
-
+import api from '../api';
 
 const fetchProfileInstitutions = async (profileId) =>{
-    const apiUrl = `http://127.0.0.1:5000/get-all-institutions-by-profile/${profileId}`
     
     try {
-        const response = await axios.get(apiUrl);
+        const response = await api.get(`/get-all-institutions-by-profile/${profileId}`);
         return response.data;
     } catch (error) {
         throw error;
