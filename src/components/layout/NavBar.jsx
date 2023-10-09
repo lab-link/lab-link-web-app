@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { GiChemicalTank } from "react-icons/gi";
+import Landing from '../../pages/landing.jsx'
 
 import Messages from "./../../pages/messages.jsx"
 import Profile from "../../pages/profile.jsx";
@@ -29,6 +30,7 @@ function NavBar() {
     <Router>
       <Tabs isLazy>
         <TabList>
+          <Tab as={Link} to="/landing">Landing</Tab>
           <Tab as={Link} to="/messages/:id">Messages</Tab>
           <Tab as={Link} to="/marketplace">Marketplace</Tab>
           <Tab as={Link} to="/profile" onClick={() => setKey(Date.now())}>Profile</Tab> 
