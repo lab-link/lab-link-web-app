@@ -1,7 +1,7 @@
 import { useAuth } from "../../context/auth.jsx";
 import React, { FormEvent, useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
-import { Button, Stack } from "@chakra-ui/react";
+import { Button, Stack, Input } from "@chakra-ui/react";
 export default function Signup() {
   const emailRef = React.createRef();
   const passwordRef = React.createRef();
@@ -38,12 +38,12 @@ export default function Signup() {
   return (
     <div>
       signup to create account.
-      <form action="" onSubmit={() => {}}>
+      {/* <form action="" onSubmit={() => {}}> */}
         {/* //TODO finish the login page. */}
         <form action="" onSubmit={handleSubmit}>
             {/* email input */}
             <div className="mb-6">
-              <input
+              <Input
                 type="text"
                 name="email"
                 id="email"
@@ -55,7 +55,7 @@ export default function Signup() {
             </div>
             {/* password input */}
             <div className="mb-6">
-              <input
+              <Input
                 type="password"
                 name="password"
                 id="password"
@@ -68,12 +68,12 @@ export default function Signup() {
             </div>
             {/* password confirmation */}
             <div className="mb-6">
-              <input
+              <Input
                 type="password"
                 name="password-confirm"
                 id="password-confirm"
                 className={"inputStyle"}
-                placeholder="Password"
+                placeholder="Retype Password"
                 ref={passwordConfirmRef}
                 required
               />
@@ -82,7 +82,6 @@ export default function Signup() {
               value="SIGN UP"
               disabled={loading}
               onClick={() => null}
-              isExpanded={true}
               type="submit"
             />
             <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-gray-300 after:mt-0.5 after:flex-1 after:border-t after:border-gray-300">
@@ -91,10 +90,10 @@ export default function Signup() {
               </p>
             </div>
             {/* <NavLink to="/login">
-              <Button value="LOGIN" onClick={() => null} isExpanded={true} />
+              <Button value="LOGIN" onClick={() => null}  />
             </NavLink> */}
           </form>
-      </form>
+      {/* </form> */}
     </div>
   );
 }
