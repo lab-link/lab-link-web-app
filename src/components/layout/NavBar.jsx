@@ -20,17 +20,18 @@ import Organization from '../../pages/organization/organization.jsx';
 function NavBar() {
   return (
     <Stack direction='row'>
-        <GiChemicalTank className="w-[50px] h-[50px]" />
-        <a
-          href=""
-          className="font-bold   text-[32px] hover:underline hover:text-black"
-        >
-          LAB LINK
-        </a>
     <Router>
       <Tabs isLazy>
         <TabList>
-          <Tab as={Link} to="/landing">Landing</Tab>
+          <Tab as={Link} to="/landing">
+            <GiChemicalTank className="w-[50px] h-[50px]" />
+            <a
+              href=""
+              className="font-bold   text-[32px] hover:underline hover:text-black"
+            >
+              LAB LINK
+            </a>
+          </Tab>
           <Tab as={Link} to="/messages/:id">Messages</Tab>
           <Tab as={Link} to="/marketplace">Marketplace</Tab>
           <Tab as={Link} to="/profile" onClick={() => setKey(Date.now())}>Profile</Tab> 
