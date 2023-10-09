@@ -102,5 +102,7 @@ const ProtectedRoute = ({ children }) => {
 };
 const protectedNav = () => {
   const auth = useAuth();
+  // uncomment during development
+  // return true
   return auth.currentUser !== null;
 };
