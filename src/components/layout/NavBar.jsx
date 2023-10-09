@@ -5,28 +5,24 @@ import {
   Tab,
   TabPanels,
   Flex,
-  Text,
-  Box,
   Button,
   Stack,
 } from "@chakra-ui/react";
-import {
-  Navigate,
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Link,
-} from "react-router-dom";
-import { GiChemicalTank } from "react-icons/gi";
-import Messages from "./../../pages/messages.jsx";
-import Profile from "../../pages/profile.jsx";
-import MarketPlace from "../../pages/marketplace/marketplace.jsx";
-import ProjectDetails from "../../pages/projectDetails/projectDetails.jsx";
-import Organization from "../../pages/organization/organization.jsx";
+
 import { useAuth } from "../../context/auth.jsx";
 import Signup from "../../pages/auth/signup.jsx";
 import Login from "../../pages/auth/login.jsx";
 // Create separate components for each page
+
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { GiChemicalTank } from "react-icons/gi";
+import Landing from '../../pages/landing.jsx'
+
+import Messages from "./../../pages/messages.jsx"
+import Profile from "../../pages/profile.jsx";
+import MarketPlace from "../../pages/marketplace/marketplace.jsx";
+import ProjectDetails from '../../pages/projectDetails/projectDetails.jsx';
+import Organization from '../../pages/organization/organization.jsx';
 
 function NavBar() {
   const auth = useAuth();
@@ -36,26 +32,27 @@ function NavBar() {
   <Signup />;
   return (
     <Stack direction="row">
-      <GiChemicalTank className="w-[50px] h-[50px]" />
-      {/* <SlChemistry className="w-[50px] h-[50px]"/> */}
-      <a
-        href=""
-        className="font-bold   text-[32px] hover:underline hover:text-black"
-      >
-        LAB LINK
-      </a>
       <Router>
         <Tabs isLazy>
           <TabList>
             {protectedNav() ? (
               <>
+                <Tab as={Link} to="/landing">
+                  <GiChemicalTank className="w-[50px] h-[50px]" />
+                  <a
+                    href=""
+                    className="font-bold   text-[32px] hover:underline hover:text-black"
+                  >
+                    LAB LINK
+                  </a>
+                </Tab>
                 <Tab as={Link} to="/messages/:id">
                   Messages
                 </Tab>
                 <Tab as={Link} to="/marketplace">
                   Marketplace
                 </Tab>
-                <Tab as={Link} to="/profile">
+                <Tab as={Link}  onClick={() => setKey(Date.now())} to="/profile">
                   Profile
                 </Tab>
                 <Button onClick={()=>{auth.logout()}}>Sign Out</Button>
@@ -68,6 +65,7 @@ function NavBar() {
           {protectedNav() ? (
             <TabPanels>
               <Routes>
+                <Route path="/landing" element={<Landing/>}></Route>
                 <Route path="/messages/:id" element={<Messages />}></Route>
                 <Route path="/marketplace" element={<MarketPlace />} />
                 <Route path="/profile" element={<Profile />} />
