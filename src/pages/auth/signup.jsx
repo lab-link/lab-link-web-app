@@ -1,17 +1,16 @@
 import { useAuth } from "../../context/auth.jsx";
-import React, { FormEvent, useState } from "react";
-import { useNavigate, NavLink, Link } from "react-router-dom";
+import React, { useState } from "react";
 import { Button, Stack, Input } from "@chakra-ui/react";
+import "./../../styles/signup.css"
+
 export default function Signup() {
   const emailRef = React.createRef();
   const passwordRef = React.createRef();
   const passwordConfirmRef = React.createRef();
   const auth = useAuth();
-  //   const theme = useTheme();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  //e=: FormEvent<HTMLFormElement>
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (passwordRef.current?.value !== passwordConfirmRef.current?.value) {
@@ -21,9 +20,6 @@ export default function Signup() {
     try {
       setError("");
       setLoading(true);
-      console.log("------");
-      console.log(emailRef.current?.value);
-      console.log(passwordRef.current?.value);
 
       await auth.signup({
         email: emailRef.current?.value,
@@ -36,8 +32,11 @@ export default function Signup() {
   };
 
   return (
-    <div>
-      <div className="text-[24px] font-semibold">Signup to enter website.</div>
+    <div class="signup">
+      <div className="signup-header">
+        <p className="font-semibold">Signup to enter website</p>
+        <p className="signed-authenticated">Authenticated with Firebase</p>
+      </div>
       {/* //TODO finish the login page. */}
       <form action="" onSubmit={handleSubmit}>
         {/* email input */}

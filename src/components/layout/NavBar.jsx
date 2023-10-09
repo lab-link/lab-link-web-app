@@ -31,64 +31,50 @@ function NavBar() {
 
   <Signup />;
   return (
-    <Stack direction="row">
-      <Router>
-        <Tabs isLazy>
-          <TabList>
-            {protectedNav() ? (
-              <>
-                <Tab as={Link} to="/landing">
-                  <GiChemicalTank className="w-[50px] h-[50px]" />
-                  <a
-                    href=""
-                    className="font-bold   text-[32px] hover:underline hover:text-black"
-                  >
-                    LAB LINK
-                  </a>
-                </Tab>
-                <Tab as={Link} to="/messages/:id">
-                  Messages
-                </Tab>
-                <Tab as={Link} to="/marketplace">
-                  Marketplace
-                </Tab>
-                <Tab as={Link}  onClick={() => setKey(Date.now())} to="/profile">
-                  Profile
-                </Tab>
-                <Button onClick={()=>{auth.logout()}}>Sign Out</Button>
-              </>
+    <Stack direction='row'>
+    <Router>
+      <Tabs isLazy>
+        <TabList>
+          {protectedNav() ? (
+                <>
+          <Tab as={Link} to="/landing">
+            <GiChemicalTank className="w-[50px] h-[50px]" />
+            <a
+              href=""
+              className="font-bold   text-[32px] hover:underline hover:text-black"
+            >
+              LAB LINK
+            </a>
+          </Tab>
+          <Tab as={Link} to="/messages/:id">Messages</Tab>
+          <Tab as={Link} to="/marketplace">Marketplace</Tab>
+          <Tab as={Link} to="/profile" onClick={() => setKey(Date.now())}>Profile</Tab> 
+          <Button onClick={()=>{auth.logout()}}>Sign Out</Button>
+          </>
             ) : (
               <></>
             )}
-          </TabList>
-          {/* protecting the route. */}
-          {protectedNav() ? (
-            <TabPanels>
-              <Routes>
-                <Route path="/landing" element={<Landing/>}></Route>
-                <Route path="/messages/:id" element={<Messages />}></Route>
-                <Route path="/marketplace" element={<MarketPlace />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/login" element={<Login />} />
-                {/* define the login page. */}
-                <Route
-                  path="/projectDetails/:projectId"
-                  element={<ProjectDetails />}
-                />
-                <Route
-                  path="/organization/:organizationId"
-                  element={<Organization />}
-                />
-              </Routes>
-            </TabPanels>
-          ) : (auth.isUserSignIn ? (
-            <Login />
-          ) : (
-            <Signup />
-          ))}
-        </Tabs>
-      </Router>
+        </TabList>
+        {protectedNav() ? (
+        <TabPanels>
+          <Routes>
+              <Route path="/landing" element={<Landing/>}></Route>
+              <Route path="/messages/:id" element={<Messages/>}></Route>
+              <Route path="/marketplace" element={<MarketPlace/>}/>
+              <Route path="/profile" element={<Profile/>}/>
+              <Route path="/projectDetails/:projectId" element={<ProjectDetails/>}/>
+              <Route path="/organization/:organizationId" element={<Organization/>}/>
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Login />} />
+          </Routes>
+        </TabPanels>
+        ) : (auth.isUserSignIn ? (
+          <Login />
+        ) : (
+          <Signup />
+        ))}
+      </Tabs>
+    </Router>
     </Stack>
   );
 }

@@ -2,6 +2,8 @@ import { useAuth } from "../../context/auth.jsx";
 import React, { FormEvent, useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import { Button, Stack, Input } from "@chakra-ui/react";
+import "./../../styles/login.css"
+
 export default function Login() {
   /**.createRef<HTMLInputElement> */
   const emailRef = React.createRef();
@@ -23,7 +25,7 @@ export default function Login() {
         password: passwordRef.current?.value,
       });
       console.log("log in success");
-      navigate("/");
+      navigate("/landing");
     } catch {
       setError("Failed to log in");
       console.log("log in error");
@@ -33,9 +35,10 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <div className="text-[24px] font-semibold">
-        Sign In With your account.
+    <div className="login">
+      <div>
+        <h3 className="font-semibold">Login</h3>
+        <p className="login-authenticated">Authenticated through Firebase</p>
       </div>
       {/* <form action="" onSubmit={() => {}}> */}
       {/* //TODO finish the login page. */}
@@ -77,7 +80,7 @@ export default function Login() {
           }}
           type="submit"
         >
-          Sign Up
+          Login
         </Button>
         <div onClick={()=>{auth.toggleSignIn()}} className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-gray-300 after:mt-0.5 after:flex-1 after:border-t after:border-gray-300">
           <p className="text-primaryDark mx-4 mb-0 text-center font-semibold hover:underline hover:cursor-pointer">
