@@ -1,5 +1,7 @@
 import Linebreaker from "./linebreaker";
 import { Link } from "react-router-dom";
+import {faker} from "@faker-js/faker"
+
 
 export default function ProjectPositionCard({position="Position", organization="organization", org={}, organizationId=31}){
     // TODO: fetch api data for the position and organization
@@ -8,10 +10,10 @@ export default function ProjectPositionCard({position="Position", organization="
             Project Position
         </div>
         <Linebreaker/>
-        <div className="text-[24px] font-semibold">{position}</div>
+        <div className="text-[24px] font-semibold">{faker.person.jobTitle()}</div>
         <Link to={`/organization/${organizationId}`} params={org}>
                   {/* <JobPositionCard /> */}
-                  <div className="text-[24px] font-light hover:cursor-pointer hover:underline">{organization}</div>
+                  <div className="text-[24px] font-light hover:cursor-pointer hover:underline">{faker.company.buzzPhrase()}</div>
         </Link>
         {/* <div className="text-[24px] font-light hover:cursor-pointer hover:underline">{organization}</div> */}
     </div>
