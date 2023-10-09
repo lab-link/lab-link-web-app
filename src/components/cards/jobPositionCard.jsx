@@ -16,8 +16,8 @@ export default function JobPositionCard({
         {avatar}
       </div>
       <div className="flex flex-col items-start">
-        <div className="text-[20px] font-semibold">{jobTitle}</div>
-        <div className="text-[20px] font-light">{companyName}</div>
+        <div className="text-[15px] font-semibold">{jobTitle}</div>
+        <div className="text-[12px] font-light">{companyName}</div>
       </div>
       </Link>
     </div>
