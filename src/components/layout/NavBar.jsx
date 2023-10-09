@@ -37,6 +37,7 @@ function NavBar() {
         </TabList>
         <TabPanels>
           <Routes>
+              <Route path="/landing" element={<Landing/>}></Route>
               <Route path="/messages/:id" element={<Messages/>}></Route>
               <Route path="/marketplace" element={<MarketPlace/>}/>
               <Route path="/profile" element={<Profile/>}/>
