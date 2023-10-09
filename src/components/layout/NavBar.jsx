@@ -7,6 +7,7 @@ import {
   Flex,
   Text,
   Box,
+  Button,
   Stack,
 } from "@chakra-ui/react";
 import {
@@ -24,6 +25,7 @@ import ProjectDetails from "../../pages/projectDetails/projectDetails.jsx";
 import Organization from "../../pages/organization/organization.jsx";
 import { useAuth } from "../../context/auth.jsx";
 import Signup from "../../pages/auth/signup.jsx";
+import Login from "../../pages/auth/login.jsx";
 // Create separate components for each page
 
 function NavBar() {
@@ -56,6 +58,7 @@ function NavBar() {
                 <Tab as={Link} to="/profile">
                   Profile
                 </Tab>
+                <Button onClick={()=>{auth.logout()}}>Sign Out</Button>
               </>
             ) : (
               <></>
@@ -69,6 +72,7 @@ function NavBar() {
                 <Route path="/marketplace" element={<MarketPlace />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/signup" element={<Signup />} />
+                <Route path="/login" element={<Login />} />
                 {/* define the login page. */}
                 <Route
                   path="/projectDetails/:projectId"
@@ -80,9 +84,11 @@ function NavBar() {
                 />
               </Routes>
             </TabPanels>
+          ) : (auth.isUserSignIn ? (
+            <Login />
           ) : (
             <Signup />
-          )}
+          ))}
         </Tabs>
       </Router>
     </Stack>
